@@ -1,10 +1,19 @@
 # config.py
 
 # API KEYS
-WAQI_API_KEY = "71a756c6d8f03e1751d580097eca232c5244a59e" 
-GROQ_API_KEY = "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"
+import os
+from dotenv import load_dotenv
 
-# APP SETTINGS
+# Load the secret .env file
+load_dotenv()
+
+# Read the keys securely
+WAQI_API_KEY = os.environ.get("WAQI_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+
+# App Settings
 CHENNAI_LAT = 13.0827
 CHENNAI_LON = 80.2707
 USE_REAL_DATA = True
+
+
